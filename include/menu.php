@@ -15,7 +15,7 @@
                 <img src="Gentella/production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Wilmer Mendoza,</span>
                 <h2><?php echo $res_b_u_s['apellidos_nombres']; ?></h2>
               </div>
             </div>
