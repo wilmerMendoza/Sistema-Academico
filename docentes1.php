@@ -46,7 +46,7 @@ include "include/verificar_sesion.php";
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_estudiante.php">
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">DNI :
@@ -110,58 +110,10 @@ include "include/verificar_sesion.php";
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Año de Ingreso :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nivel Educacion :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="anio_ingreso" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Programa de Estudios :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="programa_estudio" id="programa_estudio" class="form-control col-md-7 col-xs-12">
-                          <option value="">Seleccione</option>
-                          <?php
-                          $buscar_pe = buscarProgramaEstudio($conexion);
-                          while ($res_b_pe = mysqli_fetch_array($buscar_pe)) {
-                          ?>
-                          <option value="<?php echo $res_b_pe['id']; ?>"><?php echo $res_b_pe['nombre']; ?></option>
-                          <?php
-                          };
-                          ?>
-                        </select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Semestre:
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="semestre" id="semestre" class="form-control col-md-7 col-xs-12">
-                          <option value="">Seleccione</option>
-                          <?php
-                          $buscar_sem = buscarSemestre($conexion);
-                          while ($res_b_sem = mysqli_fetch_array($buscar_sem)) {
-                          ?>
-                          <option value="<?php echo $res_b_sem['id']; ?>"><?php echo $res_b_sem['descripcion']; ?></option>
-                          <?php
-                          };
-                          ?>
-                        </select>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Seccion :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="seccion" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Turno :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="turno" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="educacion" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -181,17 +133,26 @@ include "include/verificar_sesion.php";
                         </select>
                         </div>
                       </div>
+
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Discapacidad :
-                        </label>
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo :</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="discapacidad" id="discapacidad" class="form-control col-md-7 col-xs-12">
-                            <option value="">Seleccione</option>
-                            <option value="SI">SI</option>
-                            <option value="NO">NO</option>
-                          </select>
+                        <select name="id_cargo" id="id_cargo" class="form-control col-md-7 col-xs-12">
+                          <option value="">Seleccione</option>
+                          <?php
+                          $buscar_cargo = buscarCargo($conexion);
+                          while ($res_b_cargo = mysqli_fetch_array($buscar_cargo)) {
+                          ?>
+                          <option value="<?php echo $res_b_cargo['id']; ?>"><?php echo $res_b_cargo['descripcion']; ?></option>
+                          <?php
+                          };
+                          ?>
+                        </select>
                         </div>
                       </div>
+                      
+                     
+                     
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
