@@ -17,7 +17,7 @@ $id_cargo = $_POST['id_cargo'];
 $b_docente = buscarDocenteByDni($conexion, $dni);
 $c_r_b_docente = mysqli_num_rows($b_docente);
 if ($c_r_b_docente == 0) {//validamos que no haya registros en la base de datos
-	$insertar = "INSERT INTO docente (dni, apellidos_nombres, 	fecha_nac, direccion, correo, telefono, id_genero, nivel_educacion, cond_laboral, id_cargo) VALUES ('$dni','$nom_ap','$fecha_nac', '$direccion', '$email, '$celular', '$id_genero', '$educacion', '$condicion, '$id_cargo')";
+	$insertar = "INSERT INTO docente (dni, apellidos_nombres, fecha_nac, direccion, correo, telefono, id_genero, nivel_educacion, cond_laboral, id_cargo) VALUES ('$dni','$nom_ap','$fecha_nac', '$direccion', '$email, '$celular', '$id_genero', '$educacion', '$condicion, '$id_cargo')";
 	$ejecutar_insetar = mysqli_query($conexion, $insertar);
 	// registrar usuario
 	$b_id_docente = buscarDocenteByDni($conexion, $dni);

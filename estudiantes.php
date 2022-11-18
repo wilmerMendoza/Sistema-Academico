@@ -60,6 +60,8 @@ include "include/verificar_sesion.php";
                           <th>DIRECCION</th>
                           <th>CARRERA</th>
                           <th>SEMESTRE</th>
+
+                          
                           <th>Acciones</th>
                         </tr>
                       </thead>
