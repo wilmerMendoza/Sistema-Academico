@@ -48,11 +48,11 @@ include "include/verificar_sesion.php";
                     <br />
                     <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">DNI :
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DNI :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="dni" maxlength="8" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="numeric" name="dni" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -61,12 +61,12 @@ include "include/verificar_sesion.php";
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-                      </div> 
+                      </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Nacimiento :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fecha de Nacimiento :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_nac" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                          <input type="date" name="fecha_nac" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
@@ -84,13 +84,12 @@ include "include/verificar_sesion.php";
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telefono :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">celular  :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" name="celular" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="numeric" name="celular" class="date-picker form-control col-md-7 col-xs-12" required="required" >
                         </div>
                       </div>
-
                       <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Genero :</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -108,34 +107,22 @@ include "include/verificar_sesion.php";
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nivel Educacion :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="educacion" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Condicion Laboral :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="condicion" id="condicion" class="form-control col-md-7 col-xs-12">
-                          <option value="">Seleccione</option>
-                          <?php
-                          $buscar_condicion = buscarCondicion($conexion);
-                          while ($res_b_condicion = mysqli_fetch_array($buscar_condicion)) {
-                          ?>
-                          <option value="<?php echo $res_b_condicion['id']; ?>"><?php echo $res_b_condicion['descripcion']; ?></option>
-                          <?php
-                          };
-                          ?>
-                        </select>
+                          <select name="cond_lab" class="form-control col-md-7 col-xs-12">
+                            <option value="">Seleccione</option>
+                            <option value="CONTRATADO">Contratado</option>
+                            <option value="NOMBRADO">Nombrado</option>
+                          </select>
                         </div>
                       </div>
-
+              
                       <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Cargo :</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cargo :
+                        </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="id_cargo" id="id_cargo" class="form-control col-md-7 col-xs-12">
+                        <select name="cargo" id="cargo" class="form-control col-md-7 col-xs-12">
                           <option value="">Seleccione</option>
                           <?php
                           $buscar_cargo = buscarCargo($conexion);
@@ -148,7 +135,7 @@ include "include/verificar_sesion.php";
                         </select>
                         </div>
                       </div>
-   
+                   
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -214,5 +201,3 @@ include "include/verificar_sesion.php";
     <script src="Gentella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="Gentella/build/js/custom.min.js"></script>
-  </body>
-</html>

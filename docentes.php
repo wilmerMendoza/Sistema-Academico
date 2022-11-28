@@ -41,7 +41,7 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de docente</h2>
+                    <h2>Relacion de Docentes</h2>
                     <ul class="nav navbar-right">
                       <li>
                         <a href="docente.php" class="btn btn-success">Agregar Nuevo</a>
@@ -60,11 +60,8 @@ include "include/verificar_sesion.php";
                           <th>FECHA NACIMIENTO</th>
                           <th>DIRECCION</th>
                           <th>CORREO</th>
-                          <th>TELEFONO</th>
-                          <th>GENERO</th>
-                          <th>NIVEL DE EDUCACION</th>
-                          <th>CONDICION LABORAL</th>
-                          <th>CARGO</th>
+
+                          <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -75,17 +72,13 @@ include "include/verificar_sesion.php";
                         <tr>
                           <td><?php echo $res_b_docentes['id']; ?></td>
                           <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['apellidos_nombres'];  ?></td>
+                          <td><?php echo $res_b_docentes['apellidos_nombres']; ?></td>
                           <td><?php echo $res_b_docentes['fecha_nac']; ?></td>
                           <td><?php echo $res_b_docentes['direccion']; ?></td>
                           <td><?php echo $res_b_docentes['correo']; ?></td>
-                          <td><?php echo $res_b_docentes['id_genero']; ?></td>
-                          <td><?php echo $res_b_docentes['nivel_educacion']; ?></td>
-                          <td><?php echo $res_b_docentes['cond_laboral']; ?></td>
-                          <td><?php echo $res_b_docentes['id_cargo ']; ?></td>
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
-                            <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docente['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                         </tr>
                         <?php
@@ -145,12 +138,12 @@ include "include/verificar_sesion.php";
     $('#example').DataTable({
       "language":{
     "processing": "Procesando...",
-    "lengthMenu": "Mostrar _MENU_ registros",
+    "lengthMenu": "Mostrar MENU registros",
     "zeroRecords": "No se encontraron resultados",
     "emptyTable": "Ningún dato disponible en esta tabla",
-    "sInfo": "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfo": "Mostrando del START al END de un total de TOTAL registros",
     "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "infoFiltered": "(filtrado de un total de MAX registros)",
     "search": "Buscar:",
     "infoThousands": ",",
     "loadingRecords": "Cargando...",
