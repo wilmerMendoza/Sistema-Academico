@@ -1,7 +1,7 @@
 <?php
 include "../include/conexion.php";
 include "../include/busquedas.php";
-include "include/verificar_sesion.php";
+$id = $_POST['id'];
 $dni = $_POST['dni'];
 $nom_ap = $_POST['nom_ap'];
 $fecha_nac = $_POST['fecha_nac'];
@@ -9,15 +9,15 @@ $direccion = $_POST['direccion'];
 $email = $_POST['email'];
 $celular = $_POST['celular'];
 $id_genero = $_POST['id_genero'];
-$educacion = $_POST['educacion'];
-$condicion = $_POST['condicion'];
-$id_cargo = $_POST['id_cargo'];
+$nivel_educacion = $_POST['nivel_educacion'];
+$cond_lab = $_POST['cond_lab'];
+$cargo = $_POST['cargo'];
 
 
 $b_docente = buscarDocenteByDni($conexion, $dni);
 $c_r_b_docente = mysqli_num_rows($b_docente);
 if ($c_r_b_docente == 0) {//validamos que no haya registros en la base de datos
-	$insertar = "INSERT INTO docente (dni, apellidos_nombres, fecha_nac, direccion, correo, telefono, id_genero, nivel_educacion, cond_laboral, id_cargo) VALUES ('$dni','$nom_ap','$fecha_nac', '$direccion', '$email, '$celular', '$id_genero', '$educacion', '$condicion, '$id_cargo')";
+	$insertar = "INSERT INTO docente (dni, apellidos_nombres, fecha_nac, direccion, correo, telefono, id_genero , nivel_educacion, cond_laboral, id_cargo) VALUES ('$dni','$nom_ap', '$fecha_nac', '$direccion', '$email', '$celular', '$id_genero', '$nivel_educacion', '$cond_lab', '$cargo')";
 	$ejecutar_insetar = mysqli_query($conexion, $insertar);
 	// registrar usuario
 	$b_id_docente = buscarDocenteByDni($conexion, $dni);

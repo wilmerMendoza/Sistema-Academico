@@ -138,12 +138,12 @@ include "include/verificar_sesion.php";
     $('#example').DataTable({
       "language":{
     "processing": "Procesando...",
-    "lengthMenu": "Mostrar MENU registros",
+    "lengthMenu": "Mostrar _MENU_ registros",
     "zeroRecords": "No se encontraron resultados",
     "emptyTable": "Ningún dato disponible en esta tabla",
-    "sInfo": "Mostrando del START al END de un total de TOTAL registros",
+    "sInfo": "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
     "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-    "infoFiltered": "(filtrado de un total de MAX registros)",
+    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
     "search": "Buscar:",
     "infoThousands": ",",
     "loadingRecords": "Cargando...",
