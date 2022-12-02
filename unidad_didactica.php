@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Relacion de Docentes</h2>
+                    <h2>Registro de docente</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="datos_institucionales.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="docente.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -54,12 +54,19 @@ include "include/verificar_sesion.php";
                     <table id="example" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>IDENTIFICACION</th>
-                          <th>ID PERIODO ACADEMICO</th>
-                         
-                         
+                          <th>Id</th>
+                          <th>DESCRIPCION</th>
+                          <th>NUMERO DE MODULO </th>
+                          <th>ID PROGRAMA DE ESTUDIOS</th>
+                          <th>ID MODULO</th>
+                          <th>ID SEMESTRE</th>
+                          <th>CREDITOS</th>
+                          <th>HORAS</th>
+                          <th>TIPO</th>
+                          <th>ORDEN</th>
+                        
 
-                          <th>Acciones</th>
+                          <th>acciones</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -68,14 +75,20 @@ include "include/verificar_sesion.php";
                         while ($res_b_docentes = mysqli_fetch_array($b_docentes)) {
                         ?>
                         <tr>
-                          
-                          
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-
+                          <td><?php echo $res_b_docentes['id']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['apellidos_nombres'];  ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                         
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
-                            <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-danger">Eliminar</a>
+                            <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docente['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                         </tr>
                         <?php

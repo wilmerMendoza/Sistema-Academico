@@ -40,53 +40,86 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de periodo academico</h2>
+                    <h2>Datos Institucinales</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_estudiante.php">
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
 
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre :
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Codigo Modular :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de inicio :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_nac" class="date-picker form-control col-md-7 col-xs-12" required="required" >
-                        </div>
-                      </div>
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha fin :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="anio_ingreso" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="numeric" name="cod_modular" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Director :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Ruc :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="numeric" name="Ruc" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fecha actas :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre Institucional :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nombre_institución" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                       
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Departamento :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="departamento" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                     
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Provincia  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="provincia" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Distrito  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="distrito" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Direccion  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="direccion" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Telefono  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="telefono" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Correo  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" name="correo" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Numero de Resulucion  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="numeric" name="nro_resolucion" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                     
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -152,5 +185,3 @@ include "include/verificar_sesion.php";
     <script src="Gentella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="Gentella/build/js/custom.min.js"></script>
-  </body>
-</html>

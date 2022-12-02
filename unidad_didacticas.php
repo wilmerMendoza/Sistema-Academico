@@ -40,53 +40,102 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de periodo academico</h2>
+                    <h2>Registro de unidades didactica</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_estudiante.php">
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
 
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre :
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">DNI :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                    
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de inicio :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_nac" class="date-picker form-control col-md-7 col-xs-12" required="required" >
-                        </div>
-                      </div>
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha fin :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="anio_ingreso" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="numeric" name="dni" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Director :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Apellidos y Nombres :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fecha actas :
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fecha de Nacimiento :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="date" name="fecha_nac" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
-                       
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Dirección :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="direccion" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Correo :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">celular  :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="numeric" name="celular" class="date-picker form-control col-md-7 col-xs-12" required="required" >
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Genero :</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="id_genero" id="id_genero" class="form-control col-md-7 col-xs-12">
+                          <option value="">Seleccione</option>
+                          <?php
+                          $buscar_genero = buscarGenero($conexion);
+                          while ($res_b_genero = mysqli_fetch_array($buscar_genero)) {
+                          ?>
+                          <option value="<?php echo $res_b_genero['id']; ?>"><?php echo $res_b_genero['genero']; ?></option>
+                          <?php
+                          };
+                          ?>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Condicion Laboral :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="cond_lab" class="form-control col-md-7 col-xs-12">
+                            <option value="">Seleccione</option>
+                            <option value="CONTRATADO">Contratado</option>
+                            <option value="NOMBRADO">Nombrado</option>
+                          </select>
+                        </div>
+                      </div>
+              
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cargo :
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select name="cargo" id="cargo" class="form-control col-md-7 col-xs-12">
+                          <option value="">Seleccione</option>
+                          <?php
+                          $buscar_cargo = buscarCargo($conexion);
+                          while ($res_b_cargo = mysqli_fetch_array($buscar_cargo)) {
+                          ?>
+                          <option value="<?php echo $res_b_cargo['id']; ?>"><?php echo $res_b_cargo['descripcion']; ?></option>
+                          <?php
+                          };
+                          ?>
+                        </select>
+                        </div>
+                      </div>
+                   
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -152,5 +201,3 @@ include "include/verificar_sesion.php";
     <script src="Gentella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="Gentella/build/js/custom.min.js"></script>
-  </body>
-</html>
