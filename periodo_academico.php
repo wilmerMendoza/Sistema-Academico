@@ -1,5 +1,5 @@
-<?php
-include "include/conexion.php";
+<?php 
+include "include/conexion.php"; 
 include "include/busquedas.php";
 include "include/verificar_sesion.php";
 ?>
@@ -20,12 +20,13 @@ include "include/verificar_sesion.php";
     <link href="Gentella/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="Gentella/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="Gentella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="Gentella/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="Gentella/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="Gentella/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="Gentella/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="Gentella/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="Gentella/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="Gentella/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
     <!-- Custom Theme Style -->
     <link href="Gentella/build/css/custom.min.css" rel="stylesheet">
   </head>
@@ -40,67 +41,53 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de periodo academico</h2>
-                    
+                    <h2>Relacion de Docentes</h2>
+                    <ul class="nav navbar-right">
+                      <li>
+                        <a href="datos_institucionales.php" class="btn btn-success">Agregar Nuevo</a>
+                      </li>
+                    </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_estudiante.php">
-
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
                     
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de inicio :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="fecha_nac" class="date-picker form-control col-md-7 col-xs-12" required="required" >
-                        </div>
-                      </div>
-                      
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Fecha fin :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="date" name="anio_ingreso" maxlength="9" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Director :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Fecha actas :
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nom_ap" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                       
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button">Cancelar</button>
-						  <button class="btn btn-primary" type="reset">Limpiar</button>
-                          <button type="submit" class="btn btn-success">Guardar</button>
-                        </div>
-                      </div>
+                    <table id="example" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>IDENTIFICACION</th>
+                          <th>ID PERIODO ACADEMICO</th>
+                         
+                         
 
-                    </form>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php 
+                        $b_docentes = buscarDocentes($conexion);
+                        while ($res_b_docentes = mysqli_fetch_array($b_docentes)) {
+                        ?>
+                        <tr>
+                          
+                          
+                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
+                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
+
+                          <td>
+                            <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-danger">Eliminar</a>
+                          </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                        
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
         </div>
         <!-- /page content -->
         <!-- footer content -->
@@ -113,6 +100,7 @@ include "include/verificar_sesion.php";
         <!-- /footer content -->
       </div>
     </div>
+    
     <!-- jQuery -->
     <script src="Gentella/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -121,36 +109,51 @@ include "include/verificar_sesion.php";
     <script src="Gentella/vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="Gentella/vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="Gentella/vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="Gentella/vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="Gentella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
     <script src="Gentella/vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="Gentella/vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="Gentella/vendors/Flot/jquery.flot.js"></script>
-    <script src="Gentella/vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="Gentella/vendors/Flot/jquery.flot.time.js"></script>
-    <script src="Gentella/vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="Gentella/vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="Gentella/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="Gentella/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="Gentella/vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="Gentella/vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="Gentella/vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="Gentella/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="Gentella/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="Gentella/vendors/moment/min/moment.min.js"></script>
-    <script src="Gentella/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Datatables -->
+    <script src="Gentella/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="Gentella/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="Gentella/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="Gentella/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="Gentella/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="Gentella/vendors/pdfmake/build/vfs_fonts.js"></script>
+
     <!-- Custom Theme Scripts -->
     <script src="Gentella/build/js/custom.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    $('#example').DataTable({
+      "language":{
+    "processing": "Procesando...",
+    "lengthMenu": "Mostrar _MENU_ registros",
+    "zeroRecords": "No se encontraron resultados",
+    "emptyTable": "Ningún dato disponible en esta tabla",
+    "sInfo": "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
+    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+    "search": "Buscar:",
+    "infoThousands": ",",
+    "loadingRecords": "Cargando...",
+    "paginate": {
+        "first": "Primero",
+        "last": "Último",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    },
+      }
+    });
+
+    } );
+    </script>
   </body>
 </html>

@@ -70,20 +70,21 @@ include "include/verificar_sesion.php";
                       </thead>
                       <tbody>
                         <?php 
-                        $b_docentes = buscarDocentes($conexion);
-                        while ($res_b_docentes = mysqli_fetch_array($b_docentes)) {
+                        $b_dato_institucional = buscarDatoInstitucional($conexion);
+                        while ($res_b_dato_institucional = mysqli_fetch_array($b_dato_institucinal)) {
                         ?>
                         <tr>
-                          <td><?php echo $res_b_docentes['cod_modular']; ?></td>
-                          <td><?php echo $res_b_docentes['Ruc']; ?></td>
-                          <td><?php echo $res_b_docentes['nombre_institución']; ?></td>
-                          <td><?php echo $res_b_docentes['departamento']; ?></td>
-                          <td><?php echo $res_b_docentes['provincia']; ?></td>
-                          <td><?php echo $res_b_docentes['distriro']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['cod_modular']; ?></td>
+                          <td><?php echo $res_b_dato_institucinal['Ruc']; ?></td>
+                          <td><?php echo $res_b_dato_institucinal['nombre_institución']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['departamento']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['provincia']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['distriro']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['direccion']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['telefono']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['correo']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['numero_resulucion']; ?></td>
+                          <td><?php echo $res_b_dato_institucional['acciones']; ?></td>
 
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
