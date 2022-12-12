@@ -66,7 +66,7 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nombre Institucional :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="nombre_institución" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nombre_institucion" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
