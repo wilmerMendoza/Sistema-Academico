@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Relacion de Docentes</h2>
+                    <h2>Periodo Academico</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="datos_institucionales.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="periodo_academicos.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -54,8 +54,12 @@ include "include/verificar_sesion.php";
                     <table id="example" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>IDENTIFICACION</th>
-                          <th>ID PERIODO ACADEMICO</th>
+                          <th>ID</th>
+                          <th>PERIODO ACADEMICO</th>
+                          <th>FECHA INICIO</th>
+                          <th>FECHA FIN</th>
+                          <th>DIRECTOR</th>
+                          <th>FECHA ACTAS</th>
                          
                          
 
@@ -70,8 +74,12 @@ include "include/verificar_sesion.php";
                         <tr>
                           
                           
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
-                          <td><?php echo $res_b_datos_institucionales['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_academico['']; ?></td>
 
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>

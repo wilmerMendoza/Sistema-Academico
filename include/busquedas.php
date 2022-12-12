@@ -44,4 +44,18 @@ function buscarDocentes($conexion){
     return mysqli_query($conexion, $sql);
 }
 
+function buscarDatosInstitucionales($conexion){
+    $sql = "SELECT * FROM datos_institucionales";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarDatosInstitucionalesByCodModular($conexion, $cod_modular){
+    $sql = "SELECT * FROM datos_institucionales WHERE cod_modular='$cod_modular'";
+    return mysqli_query($conexion, $sql);
+}
+
+
+
+
+
 ?>
