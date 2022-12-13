@@ -62,12 +62,12 @@ include "include/verificar_sesion.php";
                       </thead>
                       <tbody>
                         <?php 
-                        $b_estudiantes = buscarEstudiantes($conexion);
-                        while ($res_b_estudiantes = mysqli_fetch_array($b_estudiantes)) {
+                        $b_semestre = buscarSemestre($conexion);
+                        while ($res_b_semestre = mysqli_fetch_array($b_semestre)) {
                         ?>
                         <tr>
-                          <td><?php echo $res_b_estudiantes['id']; ?></td>
-                          <td><?php echo $res_b_estudiantes['descripcion']; ?></td>
+                          <td><?php echo $res_b_semestre['id']; ?></td>
+                          <td><?php echo $res_b_semestre['descripcion']; ?></td>
                           <td>
                             <a href="editar_estudiante.php?id=<?php echo $res_b_estudiantes['id']; ?>" class="btn btn-primary">Editar</a>
                             <a href="operaciones/eliminar_estudiante.php?id=<?php echo $res_b_estudiantes['id']; ?>" class="btn btn-danger">Eliminar</a>
