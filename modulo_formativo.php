@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de docente</h2>
+                    <h2>Modulo Formativo</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="docente.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="modulo_formativos.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -54,10 +54,10 @@ include "include/verificar_sesion.php";
                     <table id="example" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Id</th>
-                          <th>DESCRIPCION</th>
+                          <th>ID</th>
+                          <th>PROGRAMA DE ESTUDIOS</th>
                           <th>NUMERO DE MODULO </th>
-                          <th>ID PROGRAMA DE ESTUDIOS</th>
+                          <th>NOMBRE</th>
                         
 
                           <th>acciones</th>
@@ -70,8 +70,9 @@ include "include/verificar_sesion.php";
                         ?>
                         <tr>
                           <td><?php echo $res_b_docentes['id']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['apellidos_nombres'];  ?></td>
+                          <td><?php echo $res_b_docentes['programa_estudios']; ?></td>
+                          <td><?php echo $res_b_docentes['numero_modulo'];  ?></td>
+                          <td><?php echo $res_b_docentes['nombre'];  ?></td>
                          
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
