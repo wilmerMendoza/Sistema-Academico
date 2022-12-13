@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Relacion de Docentes</h2>
+                    <h2>Presente Periodo Academico</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="datos_institucionales.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="presente_periodo_academico.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -54,7 +54,7 @@ include "include/verificar_sesion.php";
                     <table id="example" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>IDENTIFICACION</th>
+                          <th>ID</th>
                           <th>ID PERIODO ACADEMICO</th>
                          
                          
