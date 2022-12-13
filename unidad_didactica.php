@@ -41,10 +41,10 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Registro de docente</h2>
+                    <h2>Unidades Didacticas</h2>
                     <ul class="nav navbar-right">
                       <li>
-                        <a href="docente.php" class="btn btn-success">Agregar Nuevo</a>
+                        <a href="unidad_didacticas.php" class="btn btn-success">Agregar Nuevo</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -56,10 +56,9 @@ include "include/verificar_sesion.php";
                         <tr>
                           <th>Id</th>
                           <th>DESCRIPCION</th>
-                          <th>NUMERO DE MODULO </th>
-                          <th>ID PROGRAMA DE ESTUDIOS</th>
-                          <th>ID MODULO</th>
-                          <th>ID SEMESTRE</th>
+                          <th>PROGRAMA DE ESTUDIOS</th>
+                          <th>MODULO</th>
+                          <th>SEMESTRE</th>
                           <th>CREDITOS</th>
                           <th>HORAS</th>
                           <th>TIPO</th>
@@ -76,15 +75,15 @@ include "include/verificar_sesion.php";
                         ?>
                         <tr>
                           <td><?php echo $res_b_docentes['id']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['apellidos_nombres'];  ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
-                          <td><?php echo $res_b_docentes['dni']; ?></td>
+                          <td><?php echo $res_b_docentes['descripcion']; ?></td>
+                          <td><?php echo $res_b_docentes['id_programa_estudio'];  ?></td>
+                          <td><?php echo $res_b_docentes['id_modulo']; ?></td>
+                          <td><?php echo $res_b_docentes['id_semestre']; ?></td>
+                          <td><?php echo $res_b_docentes['creditos']; ?></td>
+                          <td><?php echo $res_b_docentes['horas']; ?></td>
+                          <td><?php echo $res_b_docentes['tipo']; ?></td>
+                          <td><?php echo $res_b_docentes['orden']; ?></td>
+                          
                          
                           <td>
                             <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
