@@ -40,13 +40,13 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Datos Institucinales</h2>
+                    <h2>Datos Institucionales</h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_docente.php">
+                    <form class="form-horizontal form-label-left" method="POST" action="operaciones/registrar_datos_institucionales.php">
 
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Codigo Modular :

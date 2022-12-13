@@ -28,25 +28,25 @@ if ($c_r_b_datos_institucionales == 0) {//validamos que no haya registros en la 
 
 	//$insertar_usu = "INSERT INTO usuarios_estudiante (id_estudiante, usuario, password) VALUES ('$id_estudiante', '$dni', '$password_fuerte')";
 	//$ejec_insert_usu = mysqli_query($conexion, $insertar_usu);
-	//if ($ejec_insert_usu) {
+	if ($ejec_insert_usu) {
 		echo "<script>
                 alert('Registro Exitoso');
                 window.location= '../estudiante.php'
     			</script>";
-	//}else{
+	}else{
 		echo "<script>
 			alert('Error al registrar usuario');
 			window.history.back();
 			</script>
 			";
 	}
-//}else{
+}else{
 	echo "<script>
 			alert('El estudiante ya existe, error al guardar');
 			window.history.back();
 			</script>
 			";
-//}
+}
 
 
 ?>
