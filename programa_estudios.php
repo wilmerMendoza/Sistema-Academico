@@ -41,7 +41,7 @@ include "include/verificar_sesion.php";
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Relacion de Estudiantes</h2>
+                    <h2>Programa de Estudios</h2>
                     <ul class="nav navbar-right">
                       <li>
                         <a href="programa_estudios1.php" class="btn btn-success">Agregar Nuevo</a>
@@ -65,7 +65,7 @@ include "include/verificar_sesion.php";
                       </thead>
                       <tbody>
                         <?php 
-                        $b_programa_estudios = buscarProgrmaEstudio($conexion);
+                        $b_programa_estudios = buscarProgramaEstudio($conexion);
                         while ($res_b_programa_estudios = mysqli_fetch_array($b_programa_estudios)) {
                         ?>
                         <tr>
