@@ -3,20 +3,38 @@ function buscarGenero($conexion){
     $sql = "SELECT * FROM genero";
     return mysqli_query($conexion, $sql);
 }
+function buscarGeneroById($conexion, $id){
+    $sql = "SELECT *FROM genero WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
 function buscarCargo($conexion){
     $sql = "SELECT * FROM cargo";
     return mysqli_query($conexion, $sql);
 }
+function buscarCargoById($conexion, $id){
+    $sql ="SELECT * FROM cargo WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+
 function buscarProgramaEstudio($conexion){
     $sql = "SELECT * FROM programa_estudios";
     return mysqli_query($conexion, $sql);
 }
+function buscarProgramaByCodigo($conexion, $codigo){
+    $sql = "SELECT * FROM programa_estudios WHERE codigo='$codigo'";
+    return mysqli_query($conexion, $sql);
+}
+
 function buscarSemestre($conexion){
     $sql = "SELECT * FROM semestre";
     return mysqli_query($conexion, $sql);
 }
 function buscarCondicion($conexion){
     $sql = "SELECT * FROM condicion";
+    return mysqli_query($conexion, $sql);
+}
+function buscarCondicionById($conexion, $id){
+    $sql = "SELECT * FROM condicion WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
 function buscarEstudianteByDni($conexion, $dni){
