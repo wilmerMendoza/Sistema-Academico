@@ -57,6 +57,10 @@ function buscarEstudiantes($conexion){
     $sql = "SELECT * FROM estudiante";
     return mysqli_query($conexion, $sql);
 }
+function buscarUserEstudiante($conexion){
+    $sql = "SELECT * FROM usuarios_estudiante";
+    return mysqli_query($conexion, $sql);
+}
 function buscarDocenteById($conexion, $id){
     $sql = "SELECT * FROM docente WHERE id=$id";
     return mysqli_query($conexion, $sql);
@@ -69,19 +73,72 @@ function buscarDocentes($conexion){
     $sql = "SELECT * FROM docente";
     return mysqli_query($conexion, $sql);
 }
+function buscarUserDocente ($conexion){
+    $sql = "SELECT*FROM usuarios_docentes";
+    return mysqli_query($conexion, $sql);
+}
 
-function buscarDatosInstitucionales($conexion){
+function buscarDatoInstitucional($conexion){
     $sql = "SELECT * FROM datos_institucionales";
     return mysqli_query($conexion, $sql);
 }
+function buscarDInstitiByCodigo($conexion, $codigo){
+    $sql = "SELECT*FROM datos_institucionales WHERE cod_modular = '$codigo'";
+    return mysqli_query($conexion, $sql);
+}
 
-function buscarDatosInstitucionalesByCodModular($conexion, $cod_modular){
-    $sql = "SELECT * FROM datos_institucionales WHERE cod_modular='$cod_modular'";
+function buscarModulo($conexion){
+    $sql = "SELECT*FROM modulo_profesional";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarUD($conexion){
+    $sql = "SELECT*FROM unidad_didactica";
     return mysqli_query($conexion, $sql);
 }
 
 
+function buscarPeriodoAcademico( $conexion){
+    $sql = "SELECT*FROM periodo_academico";
+    return mysqli_query($conexion, $sql);
+}
+function buscarPeriodoAcademicoById( $conexion, $id){
+    $sql = "SELECT * FROM periodo_academico WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
 
 
+function buscarSemestreById($conexion, $id){
+    $sql = "SELECT *FROM semestre WHERE id= '$id'";
+    return mysqli_query($conexion, $sql);
+}
+
+
+function buscarModuloById ($conexion, $id){
+    $sql = "SELECT * FROM modulo_profesional WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarUsuarioDocenteById($conexion, $id){
+    $sql = "SELECT * FROM usuarios_docentes  WHERE id= '$id'";
+    return mysqli_query($conexion, $sql);
+}
+
+function buscarPre_p_Acad($conexion){
+    $sql = "SELECT * FROM presente_periodo_acad";
+    return mysqli_query($conexion, $sql);
+}
+function buscarPre_p_AcadById($conexion, $id){
+    $sql = "SELECT * FROM presente_periodo_acad WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+function buscarUsuarioDocente ($conexion){
+    $sql = "SELECT * FROM usuarios_docentes";
+    return mysqli_query($conexion, $sql);
+}
+function buscarUdById ($conexion, $id){
+    $sql = "SELECT* FROM unidad_didactica WHERE id ='$id'";
+    return mysqli_query($conexion, $sql);
+}
 
 ?>

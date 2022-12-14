@@ -60,29 +60,27 @@ include "include/verificar_sesion.php";
                           <th>FECHA FIN</th>
                           <th>DIRECTOR</th>
                           <th>FECHA ACTAS</th>
-                         
-                         
-
+                        
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php 
-                        $b_docentes = buscarDocentes($conexion);
-                        while ($res_b_docentes = mysqli_fetch_array($b_docentes)) {
+                        $b_periodo_acad = buscarPeriodoAcademico($conexion);
+                        while ($res_b_periodo_acad = mysqli_fetch_array($b_periodo_acad)) {
                         ?>
                         <tr>
                           
                           
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
-                          <td><?php echo $res_b_periodo_academico['']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['id']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['nombre']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['fecha_inicio']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['fecha_fin']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['director']; ?></td>
+                          <td><?php echo $res_b_periodo_acad['fecha_actas']; ?></td>
 
                           <td>
-                            <a href="editar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
+                            <a href="editar_periodo_acad.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-primary">Editar</a>
                             <a href="operaciones/eliminar_docente.php?id=<?php echo $res_b_docentes['id']; ?>" class="btn btn-danger">Eliminar</a>
                           </td>
                         </tr>
