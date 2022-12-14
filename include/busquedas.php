@@ -45,6 +45,14 @@ function buscarEstudianteById($conexion, $id){
     $sql = "SELECT * FROM estudiante WHERE id='$id'";
     return mysqli_query($conexion, $sql);
 }
+function buscarUsuarioEstudianteById($conexion, $id){
+    $sql = "SELECT * FROM usuarios_estudiante WHERE id='$id'";
+    return mysqli_query($conexion, $sql);
+}
+function buscarEstudianteByNombre($conexion, $nombre){
+    $sql = "SELECT * FROM estudiante WHERE apellidos_nombres='$nombre'";
+    return mysqli_query($conexion, $sql);
+}
 function buscarEstudiantes($conexion){
     $sql = "SELECT * FROM estudiante";
     return mysqli_query($conexion, $sql);
