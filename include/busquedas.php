@@ -16,11 +16,11 @@ function buscarCargoById($conexion, $id){
     return mysqli_query($conexion, $sql);
 }
 
-function buscarProgramaEstudio($conexion){
+function buscarProgramaEstudios($conexion){
     $sql = "SELECT * FROM programa_estudios";
     return mysqli_query($conexion, $sql);
 }
-function buscarProgramaByCodigo($conexion, $codigo){
+function buscarProgramaEstudiosByCodigo($conexion, $codigo){
     $sql = "SELECT * FROM programa_estudios WHERE codigo='$codigo'";
     return mysqli_query($conexion, $sql);
 }

@@ -65,7 +65,7 @@ include "include/verificar_sesion.php";
                       </thead>
                       <tbody>
                         <?php 
-                        $b_programa_estudios = buscarProgramaEstudio($conexion);
+                        $b_programa_estudios = buscarProgramaEstudios($conexion);
                         while ($res_b_programa_estudios = mysqli_fetch_array($b_programa_estudios)) {
                         ?>
                         <tr>
