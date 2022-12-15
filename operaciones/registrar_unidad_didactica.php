@@ -1,41 +1,32 @@
-<?php
+<?php 
 include "../include/conexion.php";
-include "../include/busquedas.php";
-include "include/verificar_sesion.php";
-
-$descripcion   = $_POST [ 'descripcion' ];
-$carrera   = $_POST [ 'carrera' ];
-$modulo   = $_POST [ 'id_modulo' ];
-$semestre   = $_POST [ 'semestre' ];
-$creditos   = $_POST [ 'creditos' ];
-$horas   = $_POST [ 'horas' ];
-$tipo   = $_POST [ 'tipo' ];
-$orden   = $_POST [ 'orden' ];
+include('../include/busquedas.php');
 
 
-$b_unidad_didactica = buscarUnidadDidacticaByCarrera($conexion, $carrera);
-$c_r_b_unidad_didactica = mysqli_num_rows($b_unidad_didactica);
-if ($c_r_b_unidad_didactica == 0) { //validamos que no haya registros en la base de datos
-	$insertar = "INSERT INTO unidad_didactica (descripcion, id_programa_estudio, id_modulo	id_semestre, creditos, horas, tipo, orden ) VALUES ('$descripcion', '$carrera', '$modulo', '$semestre', '$creditos', '$horas ', '$tipo ', '$orden')";
-	$ejecutar_insetar = mysqli_query($conexion, $insertar);
-	// registrar usuario
+$nombre  = $_POST['nombre'];
+$carrera  = $_POST['carrera'];
+$modulo  = $_POST['modulo'];
+$semestre  = $_POST['semestre'];
+$creditos  = $_POST['creditos'];
+$horas  = $_POST['horas'];
+$tipo  = $_POST['tipo'];
+$orden  = $_POST['orden'];
+echo "Nombre:".$nombre." CARRERA:".$carrera." MODULO:".$modulo." SEMESTRE:".$semestre." CREDITOS:".$creditos." HORAS:".$horas." TIPO:".$tipo." ORDEN:".$orden;
 
-	if ($ejecutar_insertar) {
-		echo "<script>
+$sql = "INSERT INTO unidad_didactica (descripcion, id_programa_estudio, id_modulo, id_semestre, creditos, horas, tipo, orden ) VALUES ('$nombre', '$carrera', '$modulo', '$semestre', '$creditos', '$horas', '$tipo', '$orden')";
+
+$ejec =mysqli_query($conexion, $sql);
+if ($sql) {
+    echo "<script>
                 alert('Registro Exitoso');
-                window.location= '../estudiante.php'
+                window.location= '../unidad_didactica.php'
     			</script>";
-	}else{
-		echo "<script>
-			alert('Error al registrar usuario');
-			window.history.back();
-			</script>
-			";
-	}
+                
 }else{
-	echo "<script>
-			alert('El estudiante ya existe, error al guardar');
-			window.history.back();
-			</script>
-			";
+    echo "<script>
+        alert('Error al registrar usuario');
+        window.history.back();
+        </script>
+        ";
 }
+?>
