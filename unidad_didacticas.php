@@ -59,21 +59,21 @@ include "include/verificar_sesion.php";
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">programa de estudio :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="id_programa_estudios" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="carrera" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">modulo :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="id_modulo" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="modulo" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">semestre :
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="id_semestre" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="semestre" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">

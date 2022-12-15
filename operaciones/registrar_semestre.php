@@ -3,6 +3,8 @@ include "../include/conexion.php";
 include "../include/busquedas.php";
 include "include/verificar_sesion.php";
 $descripcion = $_POST['descripcion'];
+
+
 $b_semestre = buscarSemestreById($conexion, $Id);
 $c_r_b_semestre = mysqli_num_rows($b_semestre);
 if ($c_r_b_estudiante == 0) {//validamos que no haya registros en la base de datos

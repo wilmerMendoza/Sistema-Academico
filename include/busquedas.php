@@ -92,7 +92,7 @@ function buscarModulo($conexion){
     return mysqli_query($conexion, $sql);
 }
 
-function buscarUD($conexion){
+function buscarUnidadDidactica($conexion){
     $sql = "SELECT*FROM unidad_didactica";
     return mysqli_query($conexion, $sql);
 }

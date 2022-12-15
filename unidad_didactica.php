@@ -70,19 +70,19 @@ include "include/verificar_sesion.php";
                       </thead>
                       <tbody>
                         <?php 
-                        $b_docentes = buscarDocentes($conexion);
-                        while ($res_b_docentes = mysqli_fetch_array($b_docentes)) {
+                        $b_unidad_didactica = buscarUnidadDidactica($conexion);
+                        while ($res_b_unidad_didactica = mysqli_fetch_array($b_unidad_didactica)) {
                         ?>
                         <tr>
-                          <td><?php echo $res_b_docentes['id']; ?></td>
-                          <td><?php echo $res_b_docentes['descripcion']; ?></td>
-                          <td><?php echo $res_b_docentes['id_programa_estudio'];  ?></td>
-                          <td><?php echo $res_b_docentes['id_modulo']; ?></td>
-                          <td><?php echo $res_b_docentes['id_semestre']; ?></td>
-                          <td><?php echo $res_b_docentes['creditos']; ?></td>
-                          <td><?php echo $res_b_docentes['horas']; ?></td>
-                          <td><?php echo $res_b_docentes['tipo']; ?></td>
-                          <td><?php echo $res_b_docentes['orden']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['id']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['descripcion']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['id_programa_estudio'];  ?></td>
+                          <td><?php echo $res_b_unidad_didactica['id_modulo']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['id_semestre']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['creditos']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['horas']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['tipo']; ?></td>
+                          <td><?php echo $res_b_unidad_didactica['orden']; ?></td>
                           
                          
                           <td>
